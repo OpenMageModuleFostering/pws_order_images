@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+            <Parin_OrderImages>
+                    <active>true</active>
+                    <codePool>community</codePool>
+            </Parin_OrderImages>
+    </modules>
+</config>

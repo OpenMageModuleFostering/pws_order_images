@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action ifconfig="orderimages/frontend/enabled" method="addItem">
+                <type>skin_js</type>
+                <name>orderimages/js/jquery-1.9.1.min.js</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/frontend/enabled" method="addItem">
+                <type>skin_css</type>
+                <name>orderimages/css/styles.css</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/frontend/enabled" method="addItem">
+                <type>skin_css</type>
+                <name>orderimages/css/lightbox.css</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/frontend/enabled" method="addItem">
+                <type>skin_js</type>
+                <name>orderimages/js/lightbox.js</name>
+                <params/>
+            </action>
+        </reference>
+    </default>
+    
+    <sales_order_view translate="label">
+        <reference name="my.account.wrapper">
+            <reference name="sales.order.view">
+                <reference name="order_items">
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>default</type>
+                        <block>sales/order_item_renderer_default</block>
+                        <template>orderimages/sales/order/items/renderer/default.phtml</template>
+                    </action>
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>grouped</type>
+                        <block>sales/order_item_renderer_grouped</block>
+                        <template>orderimages/sales/order/items/renderer/default.phtml</template>
+                    </action>
+                </reference>
+            </reference>
+        </reference>     
+    </sales_order_view>
+    
+    <sales_order_invoice translate="label">
+        <reference name="my.account.wrapper">
+            <reference name="sales.order.invoice">
+                <reference name="invoice_items">
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>default</type>
+                        <block>sales/order_item_renderer_default</block>
+                        <template>orderimages/sales/order/invoice/items/renderer/default.phtml</template>
+                    </action>
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>grouped</type>
+                        <block>sales/order_item_renderer_grouped</block>
+                        <template>orderimages/sales/order/invoice/items/renderer/default.phtml</template>
+                    </action>
+                </reference>
+            </reference>
+        </reference>
+    </sales_order_invoice>
+    
+    <sales_order_shipment translate="label">
+        <reference name="my.account.wrapper">
+            <reference name="sales.order.shipment">
+                <reference name="shipment_items">
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>default</type>
+                        <block>sales/order_item_renderer_default</block>
+                        <template>orderimages/sales/order/shipment/items/renderer/default.phtml</template>
+                    </action>
+                </reference>
+            </reference>
+        </reference>
+    </sales_order_shipment>
+    
+    <sales_order_creditmemo translate="label">
+        <reference name="my.account.wrapper">
+            <reference name="sales.order.creditmemo">
+                <reference name="creditmemo_items">
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>default</type>
+                        <block>sales/order_item_renderer_default</block>
+                        <template>orderimages/sales/order/creditmemo/items/renderer/default.phtml</template>
+                    </action>
+                    <action method="addItemRender" ifconfig="orderimages/frontend/enabled">
+                        <type>grouped</type>
+                        <block>sales/order_item_renderer_grouped</block>
+                        <template>orderimages/sales/order/creditmemo/items/renderer/default.phtml</template>
+                    </action>
+                </reference>
+            </reference>
+        </reference>
+    </sales_order_creditmemo>
+</layout>

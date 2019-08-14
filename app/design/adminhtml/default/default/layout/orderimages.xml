@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action ifconfig="orderimages/backend/enabled" method="addItem">
+                <type>skin_js</type>
+                <name>orderimages/js/jquery-1.9.1.min.js</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/backend/enabled" method="addItem">
+                <type>skin_css</type>
+                <name>orderimages/css/styles.css</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/backend/enabled" method="addItem">
+                <type>skin_css</type>
+                <name>orderimages/css/lightbox.css</name>
+                <params/>
+            </action>
+            <action ifconfig="orderimages/backend/enabled" method="addItem">
+                <type>skin_js</type>
+                <name>orderimages/js/lightbox.js</name>
+                <params/>
+            </action>
+        </reference>
+    </default>
+    
+    <adminhtml_sales_order_view>
+        <reference name="left">
+            <reference name="sales_order_tabs">
+                <reference name="order_tab_info">
+                    <reference name="order_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">
+                            <type>default</type>
+                            <block>adminhtml/sales_order_view_items_renderer_default</block>
+                            <template>orderimages/sales/order/view/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>
+    </adminhtml_sales_order_view>
+    
+    <adminhtml_sales_order_invoice_new>
+        <reference name="content">
+            <reference name="sales_invoice_create">
+                <reference name="form">
+                    <reference name="order_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/invoice/create/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference> 
+    </adminhtml_sales_order_invoice_new>
+    
+    <adminhtml_sales_order_invoice_view>
+        <reference name="content">
+            <reference name="sales_invoice_view">
+                <reference name="form">
+                    <reference name="invoice_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">>
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/invoice/view/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>      
+    </adminhtml_sales_order_invoice_view>
+    
+    <adminhtml_sales_order_shipment_new>
+        <reference name="content">
+            <reference name="sales_shipment_create">
+                <reference name="form">
+                    <reference name="order_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/shipment/create/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>    
+    </adminhtml_sales_order_shipment_new>
+    
+    <adminhtml_sales_order_shipment_view>
+        <reference name="content">
+            <reference name="sales_shipment_view">
+                <reference name="form">
+                    <reference name="shipment_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/shipment/view/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>   
+    </adminhtml_sales_order_shipment_view>
+    
+    <adminhtml_sales_order_create_index>
+        <reference name="root">
+            <reference name="content">
+                <reference name="form">
+                    <reference name="data">
+                        <reference name="items">
+                            <reference name="items_grid">
+                                <action method="setTemplate" ifconfig="orderimages/backend/enabled">
+                                    <template>orderimages/sales/order/create/items/grid.phtml</template>
+                                </action>
+                            </reference>     
+                        </reference>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>       
+    </adminhtml_sales_order_create_index>
+    
+    <adminhtml_sales_order_create_load_block_items>
+        <reference name="content">
+            <reference name="items">
+                <reference name="items_grid">
+                    <action method="setTemplate" ifconfig="orderimages/backend/enabled">
+                        <template>orderimages/sales/order/create/items/grid.phtml</template>
+                    </action>
+                </reference>
+            </reference>
+        </reference>
+    </adminhtml_sales_order_create_load_block_items>
+    
+    <adminhtml_sales_order_creditmemo_view>
+        <reference name="content">
+            <reference name="sales_creditmemo_view">
+                <reference name="form">
+                    <reference name="creditmemo_items">
+                        <action method="addItemRender" ifconfig="orderimages/backend/enabled">
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/creditmemo/view/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>
+    </adminhtml_sales_order_creditmemo_view>
+    
+    <adminhtml_sales_order_creditmemo_new>
+        <reference name="content">
+            <reference name="sales_creditmemo_create">
+                <reference name="form">
+                    <reference name="order_items" ifconfig="orderimages/backend/enabled">
+                        <action method="addItemRender">
+                            <type>default</type>
+                            <block>adminhtml/sales_items_renderer_default</block>
+                            <template>orderimages/sales/order/creditmemo/create/items/renderer/default.phtml</template>
+                        </action>
+                    </reference>
+                </reference>
+            </reference>
+        </reference>   
+    </adminhtml_sales_order_creditmemo_new>
+</layout>

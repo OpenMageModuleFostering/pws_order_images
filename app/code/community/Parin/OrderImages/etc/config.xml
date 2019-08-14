@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Parin_OrderImages>
+            <version>0.1.0</version>
+        </Parin_OrderImages>
+    </modules>
+    
+    <admin>
+        <routers>
+            <orderimages_admin>
+                <use>admin</use>
+                <args>
+                    <module>Parin_OrderImages</module>
+                    <frontName>orderimages_admin</frontName>
+                </args>
+            </orderimages_admin>
+        </routers>
+    </admin>
+    
+    <frontend>
+        <routers>
+            <orderimages>
+                <use>standard</use>
+                <args>
+                    <module>Parin_OrderImages</module>
+                    <frontName>orderimages</frontName>
+                </args>
+            </orderimages>
+        </routers>
+        <layout>
+            <updates>
+                <orderimages>
+                    <file>orderimages.xml</file>
+                </orderimages>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <global>        
+        <resources>
+            <orderimages_setup>
+                <setup>
+                    <module>Parin_OrderImages</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </orderimages_setup>
+            <orderimages_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </orderimages_write>
+            <orderimages_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </orderimages_read>
+        </resources>
+        
+        <blocks>
+            <orderimages>
+                <class>Parin_OrderImages_Block</class>
+            </orderimages>
+        </blocks>
+        
+        <helpers>
+            <orderimages>
+                <class>Parin_OrderImages_Helper</class>
+            </orderimages>
+        </helpers>
+    </global>
+    
+    <default>
+        <orderimages>
+            <backend>
+                <enabled>0</enabled>				
+                <width>100</width>
+                <height>100</height>
+                <max_width>500</max_width>
+                <max_height>500</max_height>
+            </backend>
+            <frontend>
+                <enabled>0</enabled>				
+                <width>100</width>
+                <height>100</height>
+                <max_width>500</max_width>
+                <max_height>500</max_height>
+            </frontend>
+        </orderimages>
+    </default>
+    
+    <adminhtml>       
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <orderimages translate="title" module="Parin_OrderImages">
+                                            <title>Order Images</title>
+                                        </orderimages>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>	
+        <layout>
+            <updates>
+                <orderimages module="Parin_OrderImages">
+                    <file>orderimages.xml</file>
+                </orderimages>
+            </updates>
+        </layout>
+    </adminhtml>
+    <stores>
+        <admin>
+            <dev>
+                <debug>
+                    <template_hints>0</template_hints>
+                    <template_hints_blocks>0</template_hints_blocks>
+                </debug>
+            </dev>
+        </admin>
+    </stores>
+</config>

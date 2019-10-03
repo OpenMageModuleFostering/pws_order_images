@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/PWS_Order_Images",
+    "name": "openmage-module-fostering\/pws_order_images",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Patin web solutions Order Image.",
     "authors": [
